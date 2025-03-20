@@ -17,7 +17,7 @@ Lottery Data Analysis – Аналіз дій користувачів у веб
 3.Використовувані технології
 Python version 3.13
 PyCharm Community Edition 2024.3.3
-Бібліотеки: -
+Бібліотеки: --
 
 MySql Workbench 8.0 CE;
 test connection (localhost:3306)
