@@ -1,3 +1,0 @@
-databaseChangeLog:
-  - include:
-      file: my_creations/create_tables2.yaml

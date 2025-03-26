@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: 4
+      author: domino
+      changes:
+        - createTable:
+            tableName: results
+            columns:
+              - column:
+                  name: result_id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: game_id
+                  type: int
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_result_game_id
+                    references: games(game_id)
+              - column:
+                  name: draw_date
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: winning_numbers
+                  type: varchar(255)

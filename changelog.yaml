@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - include:
+      file: my_creations/001_create_users_table.yaml
+  - include:
+      file: my_creations/002_create_games_table.yaml
+  - include:
+      file: my_creations/003_create_tickets_table.yaml
+  - include:
+      file: my_creations/004_create_results_table.yaml
+  - include:
+      file: my_creations/005_create_winnings_table.yaml

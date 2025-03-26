@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: domino
+      changes:
+        - createTable:
+            tableName: games
+            columns:
+              - column:
+                  name: game_id
+                  type: INT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: game_name
+                  type: VARCHAR(255)
+              - column:
+                  name: game_type
+                  type: VARCHAR(255)
+              - column:
+                  name: ticket_price
+                  type: DECIMAL(10, 2)
+              - column:
+                  name: max_prize
+                  type: DECIMAL(10, 2)
+              - column:
+                  name: prize_category
+                  type: VARCHAR(255)

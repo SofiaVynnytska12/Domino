@@ -1,0 +1,39 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: domino
+      changes:
+        - createTable:
+            tableName: tickets
+            columns:
+              - column:
+                  name: ticket_id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: user_id
+                  type: int
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_user_id
+                    references: users(user_id)
+              - column:
+                  name: game_id
+                  type: int
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_game_id
+                    references: games(game_id)
+              - column:
+                  name: purchase_date
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: ticket_numbers
+                  type: varchar(255)
+              - column:
+                  name: status
+                  type: varchar(50)
