@@ -7,15 +7,13 @@ from typing import List, Dict, Any, Optional
 class SimpleKafkaConsumer:
     def __init__(self,
                  bootstrap_servers: str = 'localhost:9092',
-                 topic: str = 'Domino',
-                 group_id: str = 'Consumer_group'):
+                 topic: str = 'Domino'):
         """
         Настройка Kafka Consumer для подключения к существующему топику
         """
         # Настройки подключения к Kafka
         self.consumer_config = {
             'bootstrap.servers': bootstrap_servers,
-            'group.id': group_id,
             'auto.offset.reset': 'earliest'  # Начать с самых ранних сообщений
         }
 
@@ -98,8 +96,7 @@ def main():
     # Создание и запуск консьюмера
     consumer = SimpleKafkaConsumer(
         bootstrap_servers=bootstrap_servers,
-        topic=topic,
-        group_id='Consumer_group'
+        topic=topic
     )
 
     # Получение сообщений (например, максимум 10)
