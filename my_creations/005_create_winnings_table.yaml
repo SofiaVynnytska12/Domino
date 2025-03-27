@@ -1,0 +1,37 @@
+databaseChangeLog:
+  - changeSet:
+      id: 5
+      author: domino
+      changes:
+        - createTable:
+            tableName: winnings
+            columns:
+              - column:
+                  name: win_id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: ticket_id
+                  type: int
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_ticket_id
+                    references: tickets(ticket_id)
+              - column:
+                  name: win_amount
+                  type: decimal(10,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: win_category
+                  type: varchar(50)
+              - column:
+                  name: win_size
+                  type: varchar(50)
+              - column:
+                  name: win_date
+                  type: timestamp
+                  constraints:
+                    nullable: false
